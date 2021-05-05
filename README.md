@@ -6,7 +6,7 @@ Politicians : Find out what your local MP is saying. Get a notification whenever
 
 Votes : Get a notification every time a bill gets voted on in the house and see which parties voted on it and if it passed or not
 
-OpenParliament.org : Click on any notification to get more info about it on https://OpenParliament.org such as more info about a bill or more context about what your MP is saying.
+Open Parliament : Click on any notification to get more info about it on https://openparliament.ca such as more info about a bill or more context about what your MP is saying.
 
 # Options
 politicians : Change this array to add or remove parliament members you want to get notifications about
