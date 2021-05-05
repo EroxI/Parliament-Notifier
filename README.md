@@ -11,11 +11,11 @@ Open Parliament : Click on any notification to get more info about it on https:/
 # Options
 politicians : Change this array to add or remove parliament members you want to get notifications about
 
-parameters : Change the "session" portion to change the parlimentary session incase it changes
+parameters : Change the "session" portion to change the parliamentary session incase it changes
 
-ignore_do_not_disturb : Change this to chose if it will ignore do not disturb or not
+ignore_do_not_disturb : Change this to choose if it will ignore do not disturb or not
 
-# Requirments
+# Requirements
 
 pync : https://pypi.org/project/pync/ (Mac Terminal Notifier)
 
