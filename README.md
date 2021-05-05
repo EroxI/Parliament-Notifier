@@ -7,3 +7,9 @@ politicians : Change this array to add or remove parliament members you want to 
 parameters : Change the "session" portion to change the parlimentary session incase it changes
 
 ignore_do_not_disturb : Change this to chose if it will ignore do not disturb or not
+
+# Requirments
+
+pync : https://pypi.org/project/pync/ (Mac Terminal Notifier)
+requests : Default
+time : Default
