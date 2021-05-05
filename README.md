@@ -2,7 +2,7 @@
 Creates a notification every time a selected member of the canadian parliament speaks in the house or when new bills are voted on.
 
 # Features
-Politicians : Find out what your local MP is saying. Get a notification whenever they speak in the house
+Politicians : Find out what your local MP is saying. Get a notification whenever they speak in the house or customize it to see other MP's you can put as many as you want in.
 
 Votes : Get a notification every time a bill gets voted on in the house and see which parties voted on it and if it passed or not
 
