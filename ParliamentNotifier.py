@@ -32,7 +32,7 @@ while True:
             title="Bill #" + str(response_data["number"]),
             subtitle=response_data["result"] + " with " + str(response_data["yea_total"]) + " yes's and " + str(response_data["nay_total"]) + " no's",
             open="https://openparliament.ca/" + response_data["url"],
-            contentImage="https://pbs.twimg.com/profile_images/862438537446256640/LR2CNyri_400x400.jpg",
+            appIcon="https://pbs.twimg.com/profile_images/862438537446256640/LR2CNyri_400x400.jpg",
             ignoreDnD=ignore_do_not_disturb
             )
 
@@ -48,6 +48,7 @@ while True:
                     politician.replace('-', ' ').title() +  " spoke on " + response_data_2["h2"]["en"] + " during the " + str(response_data_2["h1"]["en"]),
                     title=politician.replace('-', ' ').title() + " Spoke",
                     open="https://openparliament.ca/" + response_data_2["url"],
+                    appIcon="https://pbs.twimg.com/profile_images/862438537446256640/LR2CNyri_400x400.jpg",
                     contentImage="https://api.openparliament.ca/media/polpics/{0}.jpg".format(politician),
                     ignoreDnD=ignore_do_not_disturb
                 )
@@ -57,6 +58,7 @@ while True:
                         "",
                         title=politician.replace('-', ' ').title() + " Spoke",
                         open="https://openparliament.ca/" + response_data_2["url"],
+                        appIcon="https://pbs.twimg.com/profile_images/862438537446256640/LR2CNyri_400x400.jpg",
                         contentImage="https://api.openparliament.ca/media/polpics/{0}.jpg".format(politician),
                         ignoreDnD=ignore_do_not_disturb
                     )
