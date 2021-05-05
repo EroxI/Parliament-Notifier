@@ -11,5 +11,7 @@ ignore_do_not_disturb : Change this to chose if it will ignore do not disturb or
 # Requirments
 
 pync : https://pypi.org/project/pync/ (Mac Terminal Notifier)
+
 requests : Default
+
 time : Default
