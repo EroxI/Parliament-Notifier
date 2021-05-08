@@ -2,7 +2,7 @@ import requests
 import pync
 import time
 
-# Options 
+# Options
 ignore_do_not_disturb = True
 
 notified_vote = -1
@@ -42,16 +42,16 @@ while True:
 
     # Handle the data when a MP is speaking
     for politician in politicians:
-        politician_parameters = {"politician" : politician, "format" : "json"}
-        response = requests.get("https://api.openparliament.ca/speeches", params=politician_parameters)
-        response_data = response.json()["objects"][0]
-        if response_data["url"] != notified_speech[politician]:
-            notified_speech[politician] = response_data["url"]
+        parameters_2 = {"politician" : politician, "format" : "json"}
+        response_2 = requests.get("https://api.openparliament.ca/speeches", params=parameters_2)
+        response_data_2 = response_2.json()["objects"][0]
+        if response_data_2["url"] != notified_speech[politician]:
+            notified_speech[politician] = response_data_2["url"]
             try:
                 pync.notify(
-                    politician.replace('-', ' ').title() +  " spoke on " + response_data["h2"]["en"] + " during the " + str(response_data["h1"]["en"]),
+                    politician.replace('-', ' ').title() +  " spoke on " + response_data_2["h2"]["en"] + " during the " + str(response_data_2["h1"]["en"]),
                     title=politician.replace('-', ' ').title() + " Spoke",
-                    open="https://openparliament.ca/" + response_data["url"],
+                    open="https://openparliament.ca/" + response_data_2["url"],
                     appIcon="https://pbs.twimg.com/profile_images/862438537446256640/LR2CNyri_400x400.jpg",
                     contentImage="https://api.openparliament.ca/media/polpics/{0}.jpg".format(politician),
                     ignoreDnD=ignore_do_not_disturb
