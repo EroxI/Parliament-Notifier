@@ -8,11 +8,13 @@ ignore_do_not_disturb = True
 notified_vote = -1
 notified_speech = {}
 
+# Change session if the house changes session
 parameters = {
     "session" : "43-2",
     "format" : "json",
 }
 
+# Politicians you want to be notified about
 politicians = [
     "justin-trudeau",
     "erin-otoole",
@@ -38,10 +40,10 @@ while True:
             ignoreDnD=ignore_do_not_disturb
             )
 
-    # Handle the data when a speaker is speaking
+    # Handle the data when a MP is speaking
     for politician in politicians:
-        parameters = {"politician" : politician, "format" : "json"}
-        response = requests.get("https://api.openparliament.ca/speeches", params=parameters)
+        politician_parameters = {"politician" : politician, "format" : "json"}
+        response = requests.get("https://api.openparliament.ca/speeches", params=politician_parameters)
         response_data = response.json()["objects"][0]
         if response_data["url"] != notified_speech[politician]:
             notified_speech[politician] = response_data["url"]
