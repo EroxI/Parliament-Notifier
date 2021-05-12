@@ -86,4 +86,4 @@ while True:
             notified_speech[politician] = response_2.json()["objects"][0]["url"]
     if first_pass:
         first_pass = False
-    time.sleep(10800)
+    time.sleep(21600)
