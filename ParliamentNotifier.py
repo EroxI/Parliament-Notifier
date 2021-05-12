@@ -30,9 +30,10 @@ for politician in politicians:
 while True:
     # Handle the data when a new bill is voted on / passed into law
     response = requests.get("https://api.openparliament.ca/votes", params=parameters)
+    reset = False
     for response_data in response.json()["objects"]:
         if response_data["number"] != notified_vote:
-            notified_vote = response_data["number"]
+            reset = True
             pync.notify(
                 response_data["description"]["en"], 
                 title="Bill #" + str(response_data["number"]),
@@ -45,14 +46,17 @@ while True:
                 break
         else:
             break
+    if reset:
+        notified_vote = response.json()["objects"][0]["number"]
 
     # Handle the data when a MP is speaking
     for politician in politicians:
         parameters_2 = {"politician" : politician, "format" : "json"}
         response_2 = requests.get("https://api.openparliament.ca/speeches", params=parameters_2)
+        reset = False
         for response_data_2 in response_2.json()["objects"]:
             if response_data_2["url"] != notified_speech[politician]:
-                notified_speech[politician] = response_data_2["url"]
+                reset = True
                 try:
                     pync.notify(
                         politician.replace('-', ' ').title() +  " spoke on " + response_data_2["h2"]["en"] + " during the " + str(response_data_2["h1"]["en"]),
@@ -78,6 +82,8 @@ while True:
                     break
             else:
                 break
+        if reset:
+            notified_speech[politician] = response_2.json()["objects"][0]["url"]
     if first_pass:
         first_pass = False
     time.sleep(10800)
